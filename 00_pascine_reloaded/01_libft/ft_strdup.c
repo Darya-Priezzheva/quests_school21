@@ -1,25 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+char *ft_strdup (char *s1) {
+    size_t	len = ft_strlen(s1) + 1;
 
-char *ft_strdup (char *src) {
-    int len = 0;
-    int i = 0;
-    while (src[len]) {
-        len++;
+    char *str = malloc(len);
+    if (!str) {
+        return NULL;
     }
-    char *dest = malloc(sizeof(char) * (len + 1));
-    while (i < len) {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[len] = '\0';
-    return dest;
+    ft_memcpy(str, s1, len);
+    return (str);
 }
 
-int main (void) {
-    char *origin = "Hello";
-    char *dubl = ft_strdup(origin);
-
-    return 0;
-}
 

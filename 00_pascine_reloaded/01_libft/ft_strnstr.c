@@ -1,8 +1,8 @@
 #include "libft.h"
 char *ft_strnstr (const char *source, const char *needle, size_t len) {
-    int i, j;
+    size_t i, j;
     if (!needle) {
-        return *source;
+        return (char*)source;
     }
     i = 0;
     while (source[i] && i < len) {
@@ -11,7 +11,7 @@ char *ft_strnstr (const char *source, const char *needle, size_t len) {
             j++;
         }
         if (!needle[j]) {
-            return *(source + i);
+            return (char *)source + i;
         }
         i++;
     }

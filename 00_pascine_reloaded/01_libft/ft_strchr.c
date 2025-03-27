@@ -1,13 +1,13 @@
 #include "libft.h"
-char ft_strchr (const char *str, int c) {
+char *ft_strchr (const char *str, int c) {
     while (*str) {
         if (*str == (char)c) {
-            return *str;
+            return (char *)str;
         }
-        s++;
+        str++;
     }
     if (c == '\0') {
-        return *str;
+        return (char *)str;
     }
     return NULL;
 }

@@ -3,17 +3,16 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-
-
-int get_next_line (int fd, char **line);
+#include "get_next_line.h"
 
 typedef struct s_fdnode {
     int fd;
     char *buf;
+    int is_binary;
     struct s_fdnode *next;
 } t_fdnode;
 
-int *get_next_line(int fd, char **line);
+int get_next_line(int fd, char **line);
 
 t_fdnode *find_or_create_fdnode(int fd, t_fdnode **list);
 void remove_fdnode(int fd, t_fdnode **list);

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
 #include "get_next_line.h"
 
 int get_next_line (int fd, char **line)
@@ -13,7 +12,7 @@ int get_next_line (int fd, char **line)
     if (buffer == NULL && is_binary == 0) {
         is_binary = check_binary(fd);
         if (is_binary) {
-            lseek(fd, 0, SEEK_SET);
+            //lseek(fd, 0, SEEK_SET);
             buffer = NULL;
             return -1;
         }

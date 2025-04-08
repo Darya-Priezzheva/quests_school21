@@ -1,6 +1,7 @@
-#ifndef QUESTS_SCHOOL21_GET_NEXT_LINE_H
-#define QUESTS_SCHOOL21_GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
+#define GET_NEXT_LINE_H
 #include <stdlib.h>
+#include <unistd.h>
 
 
 int get_next_line (int fd, char **line);
@@ -17,4 +18,4 @@ int extract_line (char **buffer, char **line);
 void all_free (char **buffer);
 int check_binary (int fd);
 
-#endif //QUESTS_SCHOOL21_GET_NEXT_LINE_H
+#endif
